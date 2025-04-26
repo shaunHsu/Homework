@@ -1,13 +1,17 @@
 #include "header.h"
+#include <cstddef> // For size_t
+#include <new>     // For new/delete
 
 template <typename T>
-void merge(std::vector<T>& arr, int left, int mid, int right) {
+void merge(T* arr, int left, int mid, int right) { // Changed signature
   int n1 = mid - left + 1;
   int n2 = right - mid;
 
-  std::vector<T> leftArr(n1);
-  std::vector<T> rightArr(n2);
+  // Allocate C-style arrays
+  T* leftArr = new T[n1];
+  T* rightArr = new T[n2];
 
+  // Copy data to temp arrays
   for (int i = 0; i < n1; i++) {
     leftArr[i] = arr[left + i];
   }
@@ -38,10 +42,14 @@ void merge(std::vector<T>& arr, int left, int mid, int right) {
     j++;
     k++;
   }
+
+  // Deallocate memory
+  delete[] leftArr;
+  delete[] rightArr;
 }
 
 template <typename T>
-void mergeSort(std::vector<T>& arr, int left, int right) {
+void mergeSort(T* arr, int left, int right) { // Changed signature
   if (left < right) {
     int mid = left + (right - left) / 2;
     mergeSort(arr, left, mid);
@@ -49,3 +57,6 @@ void mergeSort(std::vector<T>& arr, int left, int right) {
     merge(arr, left, mid, right);
   }
 }
+
+// Explicit instantiation if needed
+// template void mergeSort<uint16_t>(uint16_t* arr, int left, int right);

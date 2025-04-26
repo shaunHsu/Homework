@@ -1,7 +1,8 @@
 #include "header.h"
+#include <algorithm> // For std::swap
 
 template <class T>
-int partition(std::vector<T>& arr, int left, int right) {
+int partition(T* arr, int left, int right) { // Changed signature
     T pivot = arr[right];
     int i = left - 1;
     for (int j = left; j <= right - 1; j++) {
@@ -15,10 +16,13 @@ int partition(std::vector<T>& arr, int left, int right) {
 }
 
 template <class T>
-void quickSort(std::vector<T>& arr, int left, int right) {  
+void quickSort(T* arr, int left, int right) { // Changed signature
     if (left < right) {
         int pivot = partition(arr, left, right);
         quickSort(arr, left, pivot - 1);
         quickSort(arr, pivot + 1, right);
     }
 }
+
+// Explicit instantiation if needed
+// template void quickSort<uint16_t>(uint16_t* arr, int left, int right);
