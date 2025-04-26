@@ -1,0 +1,25 @@
+2
+default mem
+----------------------------------------------------------
+Memory Usage Information:
+Working Set Size: 6128 KB
+Peak Working Set Size: 6128 KB
+Pagefile Usage: 1120 KB
+----------------------------------------------------------
+quick sort (worst case) test==============================
+24
+----------------------------------------------------------
+Memory Usage Information:
+Working Set Size: 6184 KB
+Peak Working Set Size: 6184 KB
+Pagefile Usage: 1164 KB
+----------------------------------------------------------
+quick sort (worst case) avg using:0ms
+==========================================================
+end mem
+----------------------------------------------------------
+Memory Usage Information:
+Working Set Size: 6184 KB
+Peak Working Set Size: 6184 KB
+Pagefile Usage: 1164 KB
+----------------------------------------------------------
