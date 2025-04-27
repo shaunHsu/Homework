@@ -2,67 +2,67 @@
 before insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6308 KB
-Peak Working Set Size: 6308 KB
-Pagefile Usage: 1124 KB
+Working Set Size: 6316 KB
+Peak Working Set Size: 6316 KB
+Pagefile Usage: 1132 KB
 ----------------------------------------------------------
 after insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6332 KB
-Peak Working Set Size: 6332 KB
-Pagefile Usage: 1124 KB
+Working Set Size: 6356 KB
+Peak Working Set Size: 6356 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
-insertion sort (worst case) avgerage using: 0ms, memory usage: 24KB
+insertion sort (worst case) avgerage using: 0ms, memory usage: 40KB
 ==========================================================
 ==============Merge Sort n=500  (worst case) Test=========
 before merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6336 KB
-Peak Working Set Size: 6336 KB
-Pagefile Usage: 1128 KB
+Working Set Size: 6356 KB
+Peak Working Set Size: 6356 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 after merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6344 KB
-Peak Working Set Size: 6344 KB
-Pagefile Usage: 1136 KB
+Working Set Size: 6372 KB
+Peak Working Set Size: 6372 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
-merge sort (worst case) avgerage using: 0ms, memory usage: 8KB
+merge sort (worst case) avgerage using: 0ms, memory usage: 16KB
 ==========================================================
 ==============Quick Sort n=500  (worst case) Test=========
 before quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6344 KB
-Peak Working Set Size: 6344 KB
-Pagefile Usage: 1136 KB
+Working Set Size: 6372 KB
+Peak Working Set Size: 6372 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 after quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6356 KB
-Peak Working Set Size: 6356 KB
-Pagefile Usage: 1156 KB
+Working Set Size: 6372 KB
+Peak Working Set Size: 6372 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
-quick sort (longest random case) using: 0ms, memory usage: 12KB
+quick sort (longest random case) using: 0ms, memory usage: 0KB
 ==========================================================
 ===============Heap Sort n=500  (worst case) Test=========
 before heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6356 KB
-Peak Working Set Size: 6356 KB
-Pagefile Usage: 1156 KB
+Working Set Size: 6372 KB
+Peak Working Set Size: 6372 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 after heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6356 KB
-Peak Working Set Size: 6356 KB
-Pagefile Usage: 1156 KB
+Working Set Size: 6372 KB
+Peak Working Set Size: 6372 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 heap sort (longest random case) using: 0ms, memory usage: 0KB
 ==========================================================
@@ -70,101 +70,101 @@ heap sort (longest random case) using: 0ms, memory usage: 0KB
 before insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6356 KB
-Peak Working Set Size: 6356 KB
-Pagefile Usage: 1156 KB
+Working Set Size: 6372 KB
+Peak Working Set Size: 6372 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 after insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6356 KB
-Peak Working Set Size: 6356 KB
-Pagefile Usage: 1156 KB
+Working Set Size: 6408 KB
+Peak Working Set Size: 6408 KB
+Pagefile Usage: 1200 KB
 ----------------------------------------------------------
-insertion sort (worst case) avgerage using: 2ms, memory usage: 0KB
+insertion sort (worst case) avgerage using: 2ms, memory usage: 36KB
 ==========================================================
 ==============Merge Sort n=1000 (worst case) Test=========
 before merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6356 KB
-Peak Working Set Size: 6356 KB
-Pagefile Usage: 1156 KB
+Working Set Size: 6408 KB
+Peak Working Set Size: 6408 KB
+Pagefile Usage: 1200 KB
 ----------------------------------------------------------
 after merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6364 KB
-Peak Working Set Size: 6364 KB
-Pagefile Usage: 1156 KB
+Working Set Size: 6408 KB
+Peak Working Set Size: 6408 KB
+Pagefile Usage: 1200 KB
 ----------------------------------------------------------
-merge sort (worst case) avgerage using: 0ms, memory usage: 8KB
+merge sort (worst case) avgerage using: 0ms, memory usage: 0KB
 ==========================================================
 ==============Quick Sort n=1000 (worst case) Test=========
 before quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6364 KB
-Peak Working Set Size: 6364 KB
-Pagefile Usage: 1156 KB
+Working Set Size: 6408 KB
+Peak Working Set Size: 6408 KB
+Pagefile Usage: 1200 KB
 ----------------------------------------------------------
 after quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6396 KB
-Peak Working Set Size: 6396 KB
-Pagefile Usage: 1192 KB
+Working Set Size: 6408 KB
+Peak Working Set Size: 6408 KB
+Pagefile Usage: 1200 KB
 ----------------------------------------------------------
-quick sort (longest random case) using: 0ms, memory usage: 32KB
+quick sort (longest random case) using: 1ms, memory usage: 0KB
 ==========================================================
 ===============Heap Sort n=1000 (worst case) Test=========
 before heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6396 KB
-Peak Working Set Size: 6396 KB
-Pagefile Usage: 1192 KB
+Working Set Size: 6408 KB
+Peak Working Set Size: 6408 KB
+Pagefile Usage: 1200 KB
 ----------------------------------------------------------
 after heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6396 KB
-Peak Working Set Size: 6396 KB
-Pagefile Usage: 1192 KB
+Working Set Size: 6408 KB
+Peak Working Set Size: 6408 KB
+Pagefile Usage: 1200 KB
 ----------------------------------------------------------
-heap sort (longest random case) using: 0ms, memory usage: 0KB
+heap sort (longest random case) using: 1ms, memory usage: 0KB
 ==========================================================
 ============Insertion Sort n=2000 (worst case) Test=======
 before insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6396 KB
-Peak Working Set Size: 6396 KB
-Pagefile Usage: 1192 KB
+Working Set Size: 6408 KB
+Peak Working Set Size: 6408 KB
+Pagefile Usage: 1200 KB
 ----------------------------------------------------------
 after insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6400 KB
-Peak Working Set Size: 6400 KB
-Pagefile Usage: 1192 KB
+Working Set Size: 6416 KB
+Peak Working Set Size: 6472 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
-insertion sort (worst case) avgerage using: 11ms, memory usage: 4KB
+insertion sort (worst case) avgerage using: 11ms, memory usage: 8KB
 ==========================================================
 ==============Merge Sort n=2000 (worst case) Test=========
 before merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6400 KB
-Peak Working Set Size: 6400 KB
-Pagefile Usage: 1192 KB
+Working Set Size: 6416 KB
+Peak Working Set Size: 6472 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 after merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6400 KB
-Peak Working Set Size: 6400 KB
-Pagefile Usage: 1192 KB
+Working Set Size: 6416 KB
+Peak Working Set Size: 6472 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 merge sort (worst case) avgerage using: 0ms, memory usage: 0KB
 ==========================================================
@@ -172,33 +172,33 @@ merge sort (worst case) avgerage using: 0ms, memory usage: 0KB
 before quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6400 KB
-Peak Working Set Size: 6400 KB
-Pagefile Usage: 1192 KB
+Working Set Size: 6416 KB
+Peak Working Set Size: 6472 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 after quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6456 KB
-Peak Working Set Size: 6456 KB
-Pagefile Usage: 1260 KB
+Working Set Size: 6416 KB
+Peak Working Set Size: 6472 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
-quick sort (longest random case) using: 0ms, memory usage: 56KB
+quick sort (longest random case) using: 1ms, memory usage: 0KB
 ==========================================================
 ===============Heap Sort n=2000 (worst case) Test=========
 before heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6456 KB
-Peak Working Set Size: 6456 KB
-Pagefile Usage: 1260 KB
+Working Set Size: 6416 KB
+Peak Working Set Size: 6472 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 after heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6456 KB
-Peak Working Set Size: 6456 KB
-Pagefile Usage: 1260 KB
+Working Set Size: 6416 KB
+Peak Working Set Size: 6472 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 heap sort (longest random case) using: 1ms, memory usage: 0KB
 ==========================================================
@@ -206,101 +206,101 @@ heap sort (longest random case) using: 1ms, memory usage: 0KB
 before insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6464 KB
-Peak Working Set Size: 6464 KB
-Pagefile Usage: 1260 KB
+Working Set Size: 6416 KB
+Peak Working Set Size: 6472 KB
+Pagefile Usage: 1164 KB
 ----------------------------------------------------------
 after insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6408 KB
-Peak Working Set Size: 6464 KB
-Pagefile Usage: 1156 KB
+Working Set Size: 6464 KB
+Peak Working Set Size: 6472 KB
+Pagefile Usage: 1240 KB
 ----------------------------------------------------------
-insertion sort (worst case) avgerage using: 25ms, memory usage: 0KB
+insertion sort (worst case) avgerage using: 25ms, memory usage: 48KB
 ==========================================================
 ==============Merge Sort n=3000 (worst case) Test=========
 before merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6432 KB
-Peak Working Set Size: 6464 KB
-Pagefile Usage: 1180 KB
+Working Set Size: 6476 KB
+Peak Working Set Size: 6476 KB
+Pagefile Usage: 1240 KB
 ----------------------------------------------------------
 after merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6456 KB
-Peak Working Set Size: 6464 KB
-Pagefile Usage: 1204 KB
+Working Set Size: 6528 KB
+Peak Working Set Size: 6528 KB
+Pagefile Usage: 1300 KB
 ----------------------------------------------------------
-merge sort (worst case) avgerage using: 1ms, memory usage: 24KB
+merge sort (worst case) avgerage using: 1ms, memory usage: 52KB
 ==========================================================
 ==============Quick Sort n=3000 (worst case) Test=========
 before quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6456 KB
-Peak Working Set Size: 6464 KB
-Pagefile Usage: 1204 KB
+Working Set Size: 6528 KB
+Peak Working Set Size: 6528 KB
+Pagefile Usage: 1300 KB
 ----------------------------------------------------------
 after quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6500 KB
-Peak Working Set Size: 6500 KB
-Pagefile Usage: 1272 KB
+Working Set Size: 6528 KB
+Peak Working Set Size: 6528 KB
+Pagefile Usage: 1300 KB
 ----------------------------------------------------------
-quick sort (longest random case) using: 1ms, memory usage: 44KB
+quick sort (longest random case) using: 25ms, memory usage: 0KB
 ==========================================================
 ===============Heap Sort n=3000 (worst case) Test=========
 before heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6500 KB
-Peak Working Set Size: 6500 KB
-Pagefile Usage: 1272 KB
+Working Set Size: 6528 KB
+Peak Working Set Size: 6528 KB
+Pagefile Usage: 1300 KB
 ----------------------------------------------------------
 after heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6500 KB
-Peak Working Set Size: 6500 KB
-Pagefile Usage: 1272 KB
+Working Set Size: 6528 KB
+Peak Working Set Size: 6528 KB
+Pagefile Usage: 1300 KB
 ----------------------------------------------------------
-heap sort (longest random case) using: 2ms, memory usage: 0KB
+heap sort (longest random case) using: 9ms, memory usage: 0KB
 ==========================================================
 ============Insertion Sort n=4000 (worst case) Test=======
 before insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6500 KB
-Peak Working Set Size: 6500 KB
-Pagefile Usage: 1272 KB
+Working Set Size: 6536 KB
+Peak Working Set Size: 6536 KB
+Pagefile Usage: 1300 KB
 ----------------------------------------------------------
 after insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6508 KB
-Peak Working Set Size: 6508 KB
-Pagefile Usage: 1272 KB
+Working Set Size: 6644 KB
+Peak Working Set Size: 6664 KB
+Pagefile Usage: 1444 KB
 ----------------------------------------------------------
-insertion sort (worst case) avgerage using: 45ms, memory usage: 8KB
+insertion sort (worst case) avgerage using: 50ms, memory usage: 108KB
 ==========================================================
 ==============Merge Sort n=4000 (worst case) Test=========
 before merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6508 KB
-Peak Working Set Size: 6508 KB
-Pagefile Usage: 1272 KB
+Working Set Size: 6644 KB
+Peak Working Set Size: 6664 KB
+Pagefile Usage: 1444 KB
 ----------------------------------------------------------
 after merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6508 KB
-Peak Working Set Size: 6508 KB
-Pagefile Usage: 1272 KB
+Working Set Size: 6644 KB
+Peak Working Set Size: 6664 KB
+Pagefile Usage: 1444 KB
 ----------------------------------------------------------
 merge sort (worst case) avgerage using: 1ms, memory usage: 0KB
 ==========================================================
@@ -308,107 +308,107 @@ merge sort (worst case) avgerage using: 1ms, memory usage: 0KB
 before quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6508 KB
-Peak Working Set Size: 6508 KB
-Pagefile Usage: 1272 KB
+Working Set Size: 6644 KB
+Peak Working Set Size: 6664 KB
+Pagefile Usage: 1444 KB
 ----------------------------------------------------------
 after quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6576 KB
-Peak Working Set Size: 6576 KB
-Pagefile Usage: 1404 KB
+Working Set Size: 6644 KB
+Peak Working Set Size: 6664 KB
+Pagefile Usage: 1444 KB
 ----------------------------------------------------------
-quick sort (longest random case) using: 1ms, memory usage: 68KB
+quick sort (longest random case) using: 5ms, memory usage: 0KB
 ==========================================================
 ===============Heap Sort n=4000 (worst case) Test=========
 before heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6576 KB
-Peak Working Set Size: 6576 KB
-Pagefile Usage: 1404 KB
+Working Set Size: 6644 KB
+Peak Working Set Size: 6664 KB
+Pagefile Usage: 1444 KB
 ----------------------------------------------------------
 after heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6576 KB
-Peak Working Set Size: 6576 KB
-Pagefile Usage: 1404 KB
+Working Set Size: 6644 KB
+Peak Working Set Size: 6664 KB
+Pagefile Usage: 1444 KB
 ----------------------------------------------------------
-heap sort (longest random case) using: 2ms, memory usage: 0KB
+heap sort (longest random case) using: 19ms, memory usage: 0KB
 ==========================================================
 ============Insertion Sort n=5000 (worst case) Test=======
 before insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6576 KB
-Peak Working Set Size: 6576 KB
-Pagefile Usage: 1404 KB
+Working Set Size: 6652 KB
+Peak Working Set Size: 6664 KB
+Pagefile Usage: 1444 KB
 ----------------------------------------------------------
 after insertion sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6588 KB
-Peak Working Set Size: 6588 KB
-Pagefile Usage: 1404 KB
+Working Set Size: 6724 KB
+Peak Working Set Size: 6724 KB
+Pagefile Usage: 1588 KB
 ----------------------------------------------------------
-insertion sort (worst case) avgerage using: 71ms, memory usage: 12KB
+insertion sort (worst case) avgerage using: 84ms, memory usage: 72KB
 ==========================================================
 ==============Merge Sort n=5000 (worst case) Test=========
 before merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6620 KB
-Peak Working Set Size: 6620 KB
-Pagefile Usage: 1436 KB
+Working Set Size: 6736 KB
+Peak Working Set Size: 6736 KB
+Pagefile Usage: 1588 KB
 ----------------------------------------------------------
 after merge sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6668 KB
-Peak Working Set Size: 6668 KB
-Pagefile Usage: 1484 KB
+Working Set Size: 6840 KB
+Peak Working Set Size: 6840 KB
+Pagefile Usage: 1708 KB
 ----------------------------------------------------------
-merge sort (worst case) avgerage using: 1ms, memory usage: 48KB
+merge sort (worst case) avgerage using: 2ms, memory usage: 104KB
 ==========================================================
 ==============Quick Sort n=5000 (worst case) Test=========
 before quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6668 KB
-Peak Working Set Size: 6668 KB
-Pagefile Usage: 1484 KB
+Working Set Size: 6840 KB
+Peak Working Set Size: 6840 KB
+Pagefile Usage: 1708 KB
 ----------------------------------------------------------
 after quick sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6732 KB
-Peak Working Set Size: 6732 KB
-Pagefile Usage: 1616 KB
+Working Set Size: 6840 KB
+Peak Working Set Size: 6840 KB
+Pagefile Usage: 1708 KB
 ----------------------------------------------------------
-quick sort (longest random case) using: 1ms, memory usage: 64KB
+quick sort (longest random case) using: 5ms, memory usage: 0KB
 ==========================================================
 ===============Heap Sort n=5000 (worst case) Test=========
 before heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6732 KB
-Peak Working Set Size: 6732 KB
-Pagefile Usage: 1616 KB
+Working Set Size: 6840 KB
+Peak Working Set Size: 6840 KB
+Pagefile Usage: 1708 KB
 ----------------------------------------------------------
 after heap sort (worst case) memory info: 
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6732 KB
-Peak Working Set Size: 6732 KB
-Pagefile Usage: 1616 KB
+Working Set Size: 6840 KB
+Peak Working Set Size: 6840 KB
+Pagefile Usage: 1708 KB
 ----------------------------------------------------------
-heap sort (longest random case) using: 3ms, memory usage: 0KB
+heap sort (longest random case) using: 21ms, memory usage: 0KB
 ==========================================================
 ----------------------------------------------------------
 Memory Usage Information:
-Working Set Size: 6732 KB
-Peak Working Set Size: 6732 KB
-Pagefile Usage: 1616 KB
+Working Set Size: 6840 KB
+Peak Working Set Size: 6840 KB
+Pagefile Usage: 1708 KB
 ----------------------------------------------------------

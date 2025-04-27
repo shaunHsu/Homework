@@ -188,7 +188,7 @@ int main()
 {
     // Note: Vector usage might slightly change memory footprint compared to raw arrays.
     uint16_t noe[] = {500, 1000, 2000, 3000, 4000, 5000}; // Keep N moderate
-    uint16_t repeat = 1000;                                // Reduce repeat count if it's too slow
+    uint16_t repeat = 5000;                                // Reduce repeat count if it's too slow
     for (uint16_t n : noe)
     {
         insertionSortTest(n, repeat);
