@@ -1,13 +1,17 @@
 #include "header.h"
+#include <vector>    // Include vector header
 #include <algorithm> // For std::swap
 
 template <class T>
-int partition(T* arr, int left, int right) { // Changed signature
-    T pivot = arr[right];
-    int i = left - 1;
+// Pass vector by reference
+int partition(std::vector<T>& arr, int left, int right) {
+    T pivot = arr[right]; // Pivot element
+    int i = left - 1;     // Index of smaller element
+
     for (int j = left; j <= right - 1; j++) {
+        // If current element is smaller than the pivot
         if (arr[j] < pivot) {
-            i++;
+            i++; // increment index of smaller element
             std::swap(arr[i], arr[j]);
         }
     }
@@ -16,13 +20,17 @@ int partition(T* arr, int left, int right) { // Changed signature
 }
 
 template <class T>
-void quickSort(T* arr, int left, int right) { // Changed signature
+// Pass vector by reference
+void quickSort(std::vector<T>& arr, int left, int right) {
     if (left < right) {
-        int pivot = partition(arr, left, right);
-        quickSort(arr, left, pivot - 1);
-        quickSort(arr, pivot + 1, right);
+        // pi is partitioning index, arr[pi] is now at right place
+        int pi = partition(arr, left, right);
+
+        // Separately sort elements before partition and after partition
+        quickSort(arr, left, pi - 1);
+        quickSort(arr, pi + 1, right);
     }
 }
 
 // Explicit instantiation if needed
-// template void quickSort<uint16_t>(uint16_t* arr, int left, int right);
+// template void quickSort<uint16_t>(std::vector<uint16_t>& arr, int left, int right);

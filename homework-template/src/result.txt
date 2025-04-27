@@ -1,0 +1,64 @@
+--- Merge Sort Memory Usage Monitoring ---
+
+--- Baseline Measurement ---
+Baseline (before any significant allocation): Working Set Size = 6156 KB (6.01172 MB)
+-------------------------
+
+--- Monitoring for different input sizes ---
+
+Input Size (N): 10000
+After Input Vector Creation: Working Set Size = 6248 KB (6.10156 MB)
+  Increase from Baseline (Input Space Approx): 92 KB (0.0898438 MB)
+  Starting Merge Sort...
+  Merge Sort Finished.
+After Sorting Completed: Working Set Size = 6300 KB (6.15234 MB)
+  Increase from Baseline (After Sort): 144 KB (0.140625 MB)
+------------------------------------------
+
+Input Size (N): 50000
+After Input Vector Creation: Working Set Size = 6428 KB (6.27734 MB)
+  Increase from Baseline (Input Space Approx): 272 KB (0.265625 MB)
+  Starting Merge Sort...
+  Merge Sort Finished.
+After Sorting Completed: Working Set Size = 6432 KB (6.28125 MB)
+  Increase from Baseline (After Sort): 276 KB (0.269531 MB)
+------------------------------------------
+
+Input Size (N): 100000
+After Input Vector Creation: Working Set Size = 6824 KB (6.66406 MB)
+  Increase from Baseline (Input Space Approx): 668 KB (0.652344 MB)
+  Starting Merge Sort...
+  Merge Sort Finished.
+After Sorting Completed: Working Set Size = 7024 KB (6.85938 MB)
+  Increase from Baseline (After Sort): 868 KB (0.847656 MB)
+------------------------------------------
+
+Input Size (N): 500000
+After Input Vector Creation: Working Set Size = 8980 KB (8.76953 MB)
+  Increase from Baseline (Input Space Approx): 2824 KB (2.75781 MB)
+  Starting Merge Sort...
+  Merge Sort Finished.
+After Sorting Completed: Working Set Size = 9928 KB (9.69531 MB)
+  Increase from Baseline (After Sort): 3772 KB (3.68359 MB)
+------------------------------------------
+
+Input Size (N): 1000000
+After Input Vector Creation: Working Set Size = 11880 KB (11.6016 MB)
+  Increase from Baseline (Input Space Approx): 5724 KB (5.58984 MB)
+  Starting Merge Sort...
+  Merge Sort Finished.
+After Sorting Completed: Working Set Size = 12880 KB (12.5781 MB)
+  Increase from Baseline (After Sort): 6724 KB (6.56641 MB)
+------------------------------------------
+
+Input Size (N): 2000000
+After Input Vector Creation: Working Set Size = 16788 KB (16.3945 MB)
+  Increase from Baseline (Input Space Approx): 10632 KB (10.3828 MB)
+  Starting Merge Sort...
+  Merge Sort Finished.
+After Sorting Completed: Working Set Size = 16820 KB (16.4258 MB)
+  Increase from Baseline (After Sort): 10664 KB (10.4141 MB)
+------------------------------------------
+
+--- Monitoring Complete ---
+Before program exit: Working Set Size = 9004 KB (8.79297 MB)

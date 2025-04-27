@@ -1,26 +1,23 @@
 #include "header.h"
 #include <cstdint>   // For uint16_t
-#include <numeric>   // For std::iota (can be replaced)
+#include <numeric>   // For std::iota
 #include <algorithm> // For std::shuffle
 #include <random>    // For std::mt19937
 #include <chrono>    // For seed
-#include <new>       // For new
+#include <vector>    // Include vector header
 
-uint16_t* genRandom(uint16_t n){ // Return pointer
-    if (n == 0) return nullptr;
-    uint16_t* arr = new uint16_t[n]; // Allocate memory
+// Return a std::vector<uint16_t>
+std::vector<uint16_t> genRandom(uint16_t n){
+    if (n == 0) return {}; // Return empty vector
+    std::vector<uint16_t> arr(n); // Create vector
 
     // 1. Fill with 0, 1, ..., n-1
-    // std::iota(arr, arr + n, 0); // std::iota works with pointers
-    // Or replace std::iota with a loop:
-    for(uint16_t i = 0; i < n; ++i) {
-        arr[i] = i;
-    }
+    std::iota(arr.begin(), arr.end(), 0); // Use iterators
 
     // 2. Fisher-Yates shuffle
     unsigned seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
     std::mt19937 engine(seed);
-    std::shuffle(arr, arr + n, engine); // std::shuffle works with pointers
+    std::shuffle(arr.begin(), arr.end(), engine); // Use iterators
 
-    return arr; // Return the pointer
+    return arr; // Return the vector
 }

@@ -1,11 +1,18 @@
 #include "header.h"
-#include <cstddef> // Include necessary headers directly in cpp files
+#include <vector>    // Include vector header
+#include <cstddef>   // For size_t (though vector::size_type is preferred)
 
 template <class T>
-void insertionSort(T* arr, size_t n) { // Changed signature
-    for (size_t i = 1; i < n; i++) {   // Use size_t for index, compare with n
+// Pass vector by reference to modify it
+void insertionSort(std::vector<T>& arr) {
+    size_t n = arr.size(); // Get size from vector
+    if (n <= 1) return; // Nothing to sort
+
+    for (size_t i = 1; i < n; i++) {
         T v = arr[i];
-        int j = i - 1; // Keep j as int for comparison with >= 0
+        // Use long long or ptrdiff_t for j if size_t can exceed int max,
+        // or rewrite loop condition carefully. int is usually fine here.
+        int j = static_cast<int>(i) - 1;
         while (j >= 0 && arr[j] > v) {
             arr[j + 1] = arr[j];
             j--;
@@ -14,5 +21,5 @@ void insertionSort(T* arr, size_t n) { // Changed signature
     }
 }
 
-// Explicit instantiation if needed, or keep in header if included there
-// template void insertionSort<uint16_t>(uint16_t* arr, size_t n);
+// Explicit instantiation if needed (usually not required if included via header)
+// template void insertionSort<uint16_t>(std::vector<uint16_t>& arr);

@@ -1,75 +1,58 @@
 #include "header.h"
 #include <cstdint>   // For uint16_t
-#include <numeric>   // For std::iota (can be replaced)
+#include <numeric>   // For std::iota
 #include <cmath>     // For std::ceil
-#include <cstring>   // For memcpy
-#include <new>       // For new/delete
+#include <vector>    // Include vector header
+#include <algorithm> // For std::copy, std::back_inserter
 
-// Helper function using C-style arrays
-uint16_t* generateWorstCaseRecursive(const uint16_t* sorted_segment, uint16_t n) {
-    if (n == 0) {
-        return nullptr;
-    }
-    if (n == 1) {
-        uint16_t* result = new uint16_t[1];
-        result[0] = sorted_segment[0];
-        return result;
+// Helper function using std::vector
+std::vector<uint16_t> generateWorstCaseRecursive(const std::vector<uint16_t>& sorted_segment) {
+    uint16_t n = sorted_segment.size();
+    if (n <= 1) {
+        return sorted_segment; // Base case: return a copy or the vector itself if n=0 or n=1
     }
 
     uint16_t n1 = static_cast<uint16_t>(std::ceil(n / 2.0));
     uint16_t n2 = n / 2; // Integer division gives floor
 
-    uint16_t* left_part = new uint16_t[n1];
-    uint16_t* right_part = new uint16_t[n2];
+    std::vector<uint16_t> left_part;
+    left_part.reserve(n1); // Reserve space for efficiency
+    std::vector<uint16_t> right_part;
+    right_part.reserve(n2); // Reserve space for efficiency
 
-    uint16_t l_idx = 0;
-    uint16_t r_idx = 0;
+    // Distribute elements
     for (uint16_t i = 0; i < n; i++) {
         if (i % 2 == 0) {
-            left_part[l_idx++] = sorted_segment[i];
+            left_part.push_back(sorted_segment[i]);
         } else {
-            right_part[r_idx++] = sorted_segment[i];
+            right_part.push_back(sorted_segment[i]);
         }
     }
 
-    uint16_t* worst_left = generateWorstCaseRecursive(left_part, n1);
-    uint16_t* worst_right = generateWorstCaseRecursive(right_part, n2);
+    // Recursively generate worst cases for sub-problems
+    std::vector<uint16_t> worst_left = generateWorstCaseRecursive(left_part);
+    std::vector<uint16_t> worst_right = generateWorstCaseRecursive(right_part);
 
-    // We don't need the original parts anymore
-    delete[] left_part;
-    delete[] right_part;
-
-    uint16_t* result = new uint16_t[n];
-
-    // Combine results using memcpy
-    if (worst_left) {
-        memcpy(result, worst_left, n1 * sizeof(uint16_t));
-        delete[] worst_left; // Free intermediate result
-    }
-     if (worst_right) {
-        memcpy(result + n1, worst_right, n2 * sizeof(uint16_t)); // Copy to position after left part
-        delete[] worst_right; // Free intermediate result
-    }
-
+    // Combine results
+    std::vector<uint16_t> result;
+    result.reserve(n); // Reserve space
+    result.insert(result.end(), worst_left.begin(), worst_left.end());
+    result.insert(result.end(), worst_right.begin(), worst_right.end());
 
     return result;
 }
 
-uint16_t* genMergeSortWorstCase(uint16_t n) { // Return pointer
+// Return a std::vector<uint16_t>
+std::vector<uint16_t> genMergeSortWorstCase(uint16_t n) {
     if (n == 0) {
-        return nullptr;
+        return {}; // Return empty vector
     }
 
-    uint16_t* initial_sorted = new uint16_t[n]; // Allocate
-    // std::iota(initial_sorted, initial_sorted + n, 1); // Fill 1, 2, ..., n
-     // Or replace std::iota with a loop:
-    for(uint16_t i = 0; i < n; ++i) {
-        initial_sorted[i] = i + 1;
-    }
+    std::vector<uint16_t> initial_sorted(n); // Create vector
+    std::iota(initial_sorted.begin(), initial_sorted.end(), 1); // Fill 1, 2, ..., n
 
-    uint16_t* result = generateWorstCaseRecursive(initial_sorted, n);
+    // Generate the worst-case sequence recursively
+    std::vector<uint16_t> result = generateWorstCaseRecursive(initial_sorted);
 
-    delete[] initial_sorted; // Free the initial array
-
-    return result; // Return the final worst-case array
+    return result; // Return the final worst-case vector
 }
