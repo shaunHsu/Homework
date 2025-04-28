@@ -45,7 +45,7 @@ void insertionSortTest(uint16_t n, uint16_t repeat)
         std::vector<uint16_t> t = arr;
 
         auto start = std::chrono::high_resolution_clock::now();
-        insertionSort(t); // Pass vector by reference
+        insertionSort(t, 0, t.size() - 1); // Pass vector by reference
         auto end = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
 
@@ -93,7 +93,7 @@ void mergeSortTest(uint16_t n, uint16_t repeat)
     }
     cout << "after merge sort (worst case) memory info: " << endl;
     size_t after = showMemUsage();
-    cout << "merge sort (worst case) avgerage using: " << totalTime / repeat << "ms" << ", memory usage: " << (after > before ? (after - before) / 1024 : 0) << "KB" << endl;
+    cout << "merge sort (worst case) avgerage using: "<< totalTime / repeat << "ms"<< ", memory usage: " << (after > before ? (after - before) / 1024 : 0) << "KB" << endl;
     cout << "==========================================================" << endl;
     // No delete[] arr needed
 }
@@ -188,7 +188,7 @@ int main()
 {
     // Note: Vector usage might slightly change memory footprint compared to raw arrays.
     uint16_t noe[] = {500, 1000, 2000, 3000, 4000, 5000}; // Keep N moderate
-    uint16_t repeat = 5000;                                // Reduce repeat count if it's too slow
+    uint16_t repeat = 2000;                                // Reduce repeat count if it's too slow
     for (uint16_t n : noe)
     {
         insertionSortTest(n, repeat);

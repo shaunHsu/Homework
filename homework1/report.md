@@ -485,17 +485,17 @@ int main()
 
 ### 時間複雜度
 
-Insertion Sort=$O(n^2)$</br>
-Merge Sort=$O(nlogn)$</br>
-Quick Sort=$O(n^2)$</br>
-Heap Sort=$O(nlogn)$</br>
+Insertion Sort = O(n^2) </br>
+Merge Sort = O(nlogn) </br>
+Quick Sort = O(n^2) </br>
+Heap Sort = O(nlogn) </br>
 
 ### 空間複雜度
 
-Insertion Sort=$O(1)$</br>
-Merge Sort=$O(n)$</br>
-Quick Sort=$O(n)$</br>
-Heap Sort=$O(1)$</br>
+Insertion Sort = O(1) </br>
+Merge Sort = O(n) </br>
+Quick Sort = O(n) </br>
+Heap Sort = O(1) </br>
 
 ## 測試與驗證
 
@@ -513,24 +513,28 @@ g++ -std=c++23 main.cpp -o main.exe
 
 ### 排序時間計時
 
-| n    | Insertion Sort (worst case) | Merge Sort (worst case) | Quick Sort (longest random case) | Heap Sort (longest random case) |
-| :--- | :-------------------------- | :---------------------- | :------------------------------ | :----------------------------- |
-| 500  | 0                           | 0                       | 0                               | 0                              |
-| 1000 | 2                           | 0                       | 1                               | 1                              |
-| 2000 | 11                          | 0                       | 1                               | 1                              |
-| 3000 | 25                          | 1                       | 25                              | 9                              |
-| 4000 | 50                          | 1                       | 5                               | 19                             |
-| 5000 | 84                          | 2                       | 5                               | 21                             |3         |
+| n    | Insertion Sort | Merge Sort | Quick Sort | Heap Sort |
+| :--- | :------------- | :--------- | :--------- | :-------- |
+| 500  | 0              | 0          | 0          | 1         |
+| 1000 | 2              | 0          | 0          | 0         |
+| 2000 | 10             | 0          | 0          | 1         |
+| 3000 | 25             | 1          | 1          | 1         |
+| 4000 | 45             | 1          | 1          | 2         |
+| 5000 | 69             | 1          | 2          | 2         |
 
-### 空間使用量
+本表格記錄了四種排序演算法在不同資料量 (n) 下的執行時間。時間單位為毫秒 (ms)。
 
-| n    | Insertion Sort (worst case) | Merge Sort (worst case) | Quick Sort (longest random case) | Heap Sort (longest random case) |
-| :--- | :-------------------------- | :---------------------- | :------------------------------ | :----------------------------- |
-| 500  | 40                          | 16                      | 0                               | 0                              |
-| 1000 | 36                          | 0                       | 0                               | 0                              |
-| 2000 | 8                           | 0                       | 0                               | 0                              |
-| 3000 | 48                          | 52                      | 0                               | 0                              |
-| 4000 | 108                         | 0                       | 0                               | 0                              |
-| 5000 | 72                          | 104                     | 0                               | 0                              |
+Insertion Sort 與 Merge Sort 的時間是使用其 worst-case 輸入資料，重複執行 2000 次所得的平均執行時間。
+Quick Sort (longest random case) 與 Heap Sort (longest random case) 的時間則是使用隨機產生的資料，重複執行 2000 次，並記錄其中最長的一次執行時間。
+
+在上表和折線圖中可以看到，Insertion Sort 在小資料量的情況下表現良好，但在大資料量的情況下表現不佳成，整體為指數成長O(n^2)。
+
+heap sort 在 n=1000 時表現最好，整體符合O(nlogn)。
+
+其餘兩個演算法因計時器精度不夠，無法得出精確結果。
+
+### 結論
+
+在測試中，我們分析了四種排序演算法在worst case的效能,並找出最佳演算法組成一個最佳解方。當n<500時使用插入排序會更快速，當n>500時使用合併排序會更快速。綜合結果寫出的混和排序請參考compositeSort.cpp
 
 ## 申論及開發報告

@@ -12,7 +12,7 @@ std::vector<uint16_t> genRandom(uint16_t n);
 
 // Template function declarations (updated parameter type)
 template <class T>
-void insertionSort(std::vector<T>& arr); // Pass by reference
+void insertionSort(std::vector< T>& arr, int left, int right); // Pass by reference
 
 template <class T>
 // Pass by reference, indices define the sub-vector range
