@@ -4,12 +4,13 @@
 
 ## 解題說明
 
-本題要求分析使用insertion sort, merge sort, quick sort, heap sort四種演算法觀察不同資料長度時的效能,並找出最佳演算法組成一個最佳解方。
+本題要求分析使用insertion sort, merge sort, quick sort, heap sort四種演算法觀察不同資料長度時的效能,並找出最佳演算法組成一個最佳解方.
 
 ### 解題策略
 
-設計四種演算法並測量不同資料長度時的耗時,並找出最佳演算法組成一個最佳解方。
-資料內容使用各演算法的worst-case。
+在測試時間記錄方面,針對插入排序與合併排序,我們使用其 Worst Case 輸入資料進行測試,並記錄多次測試的「平均執行時間」.由於 Worst Case 的輸入序列是固定的,其執行時間變異性相對較小,取平均值能更穩定地反映該情況下的效能.
+
+對於快速排序與堆排序,我們使用隨機產生的資料進行測試.快速排序在隨機資料下的執行時間變異性可能較大,為了捕捉潛在的效能瓶頸或較差的運行情況,我們記錄了多次測試中的「最長執行時間」.堆排序雖然在 Worst Case 下的時間複雜度穩定,但在此次測試中與快速排序一樣使用隨機資料,故同樣記錄最長執行時間作為參考.
 
 ## 程式實作
 
@@ -125,7 +126,7 @@ void quickSort(std::vector<T>& arr, int left, int right) {
 }
 ```
 
-這裡的快速排序法是用最大的數字當作pivot,而不是用中間的數字當作pivot。
+這裡的快速排序法是用最大的數字當作pivot,而不是用中間的數字當作pivot.
 
 ### Heap Sort
 
@@ -162,27 +163,27 @@ void heapSort(std::vector<T>& arr) {
     }
 }
 ```
-#### Composite Sort
+### Composite Sort
 
 ```c++
 template<class T>
 void hybridMergeSortRecursive(std::vector<T>& arr, int left, int right, const int INSERTION_SORT_THRESHOLD) {
-    // 基本情況：如果範圍無效或只有一個元素，則已排序
+    // 基本情況：如果範圍無效或只有一個元素,則已排序
     if (left >= right) {
         return;
     }
 
-    // 優化：如果子陣列大小小於等於閾值，使用插入排序
+    // 優化：如果子陣列大小小於等於閾值,使用插入排序
     if (right - left + 1 <= INSERTION_SORT_THRESHOLD) {
         insertionSort(arr, left, right);
     } else {
-        // 否則，繼續使用合併排序的分解步驟
+        // 否則,繼續使用合併排序的分解步驟
         int mid = left + (right - left) / 2; // 防止溢位
 
         hybridMergeSortRecursive(arr, left, mid, INSERTION_SORT_THRESHOLD);
         hybridMergeSortRecursive(arr, mid + 1, right, INSERTION_SORT_THRESHOLD);
 
-        // 優化：如果 arr[mid] <= arr[mid+1]，表示兩個子陣列已經自然有序，無需合併
+        // 優化：如果 arr[mid] <= arr[mid+1],表示兩個子陣列已經自然有序,無需合併
         if (arr[mid] <= arr[mid + 1]) {
            return;
         }
@@ -193,10 +194,11 @@ void hybridMergeSortRecursive(std::vector<T>& arr, int left, int right, const in
 }
 ```
 
+
 ### 產生測試資料
 
-這裡產生插入排序與合併排序的worst cast資料。</br>
-快速排序與堆排序會使用隨機產生的資料。</br>
+這裡產生插入排序與合併排序的worst cast資料.</br>
+快速排序與堆排序會使用隨機產生的資料.</br>
 
 #### 插入排序
 
@@ -218,7 +220,7 @@ std::vector<uint16_t> genInsertSortWorstCase(uint16_t n) {
 }
 ```
 
-當呼叫時,會產生一個vector,並將0到n-1的數字填入,然後反轉vector,最後回傳vector。
+當呼叫時,會產生一個vector,並將0到n-1的數字填入,然後反轉vector,最後回傳vector.
 
 #### 合併排序
 
@@ -275,7 +277,7 @@ std::vector<uint16_t> genMergeSortWorstCase(uint16_t n) {
 }
 ```
 
-將合併排序法過程相反，產生worst case。
+透過將排序好的序列以隔一個取一個的方式拆分成左右兩半,再遞迴處理,最終得到的序列在合併排序時會產生最多的比較次數,從而構成 Worst Case
 
 #### 產生隨機資料
 
@@ -302,19 +304,12 @@ std::vector<uint16_t> genRandom(uint16_t n){
 
 ```
 
-產生一個vector,並將0到n-1的數字填入,然後用std::shuffle隨機打亂vector,最後回傳vector。
+產生一個vector,並將0到n-1的數字填入,然後用std::shuffle隨機打亂vector,最後回傳vector.
 
 ### 主程式
 
 使用上述方法產生對應的測試資料</br>
-在每次排序前先複製一次測試資料,以免測資被更改</br>
-開始前會測試一次目前記憶體使用情況</br>
-在排序後會再一次測試記憶體使用情況</br>
-並在輸出附上記憶體使用情況的資訊，單位為KB</br>
-時間測試時只包含排序過程的所需時間</br>
-每次測試會重複repeat次</br>
-在插入與合併時會取平均時間</br>
-在快速與堆排序時會取最大時間</br>
+並執行各測試單元</br>
 以下是測試單元範例程式</br>
 
 #### 插入排序測試單元
@@ -553,7 +548,7 @@ int main()
 
 ## 效能分析
 
-在測試中,我們分析了四種排序演算法在worst case的效能,包括插入排序、合併排序、快速排序和堆排序。
+在測試中,我們分析了四種排序演算法在worst case的效能,包括插入排序、合併排序、快速排序和堆排序.
 
 ### 時間複雜度
 
@@ -572,7 +567,7 @@ Heap Sort = O(1) </br>
 ## 測試與驗證
 
 測試環境使用windows</br>
-使用power shell 5.7.1執行</br>
+使用power shell執行</br>
 使用c++23標準</br>
 
 ```shell
@@ -594,22 +589,24 @@ $ ./main.exe > result.txt
 | 4000 | 45             | 1          | 1          | 2         |
 | 5000 | 69             | 1          | 2          | 2         |
 
-本表格記錄了四種排序演算法在不同資料量 (n) 下的執行時間。時間單位為毫秒 (ms)。
+本表格記錄了四種排序演算法在不同資料量 (n) 下的執行時間.時間單位為毫秒 (ms).
 
-Insertion Sort 與 Merge Sort 的時間是使用其 worst-case 輸入資料，重複執行 2000 次所得的平均執行時間。
-Quick Sort (longest random case) 與 Heap Sort (longest random case) 的時間則是使用隨機產生的資料，重複執行 2000 次，並記錄其中最長的一次執行時間。
+Insertion Sort 與 Merge Sort 的時間是使用其 worst-case 輸入資料,重複執行 2000 次所得的平均執行時間.
+Quick Sort (longest random case) 與 Heap Sort (longest random case) 的時間則是使用隨機產生的資料,重複執行 2000 次,並記錄其中最長的一次執行時間.
 
 ![](https://github.com/shaunHsu/DSHomework/blob/main/homework1/src/a.png)
 
-在上表和折線圖中可以看到，Insertion Sort 在小資料量的情況下表現良好，但在大資料量的情況下表現不佳成，整體為指數成長O(n^2)。
+x軸為資料長度n,y軸為耗時,單位毫秒(ms)
 
-heap sort 在 n=1000 時表現最好，整體符合O(nlogn)。
+在上表和折線圖中可以看到,Insertion Sort 在小資料量的情況下表現良好,但在大資料量的情況下表現不佳成,整體為指數成長O(n^2).
 
-其餘兩個演算法因計時器精度不夠，無法得出精確結果。
+heap sort 在 n=1000 時較於其他資料長度表現最好,以圖表來看符合O(nlogn).
+
+其餘兩個演算法因計時器刻度不夠小,無法比較出精確結果.
 
 ### 結論
 
-在測試中，我們分析了四種排序演算法在worst case的效能,並找出最佳演算法組成一個最佳解方。當n<500時使用插入排序會更快速，當n>500時使用合併排序會更快速。綜合結果寫出的混和排序請參考compositeSort.cpp
+在測試中,我們分析了四種排序演算法在worst case的效能,並找出最佳演算法組成一個最佳解方.當n<500時使用插入排序會更快速,當n>500時使用合併排序會更快速.綜合結果寫出的混和排序請參考compositeSort.cpp
 
 | n    | Composite Sort |
 | :--- | :------------- |
@@ -620,10 +617,10 @@ heap sort 在 n=1000 時表現最好，整體符合O(nlogn)。
 | 4000 | 0 |
 | 5000 | 0 |
 
-上方表格中是排序的結果，資料採用隨機測資，每個長度重複2000次，取最大值。可以看到全部都小於1ms。
+上方表格中是排序的結果,資料採用隨機測資,每個長度重複2000次,取最大值.可以看到全部都小於1ms.
 
 ## 申論及開發報告
 
-從上述測試結果可見，由於時鐘精度為毫秒（ms）級，不足以精準捕捉細微的時間差異。若要觀察到顯著差異，需要增加測試數據量，或採用更高精度的計時工具。另一種更為穩定的評估方法是計算執行步驟數，這可以有效避免系統因素對結果造成的影響。
+從上述測試結果可見,由於時鐘精度為毫秒（ms）級,不足以精準捕捉細微的時間差異.若要觀察到顯著差異,需要增加測試數據量,或採用更高精度的計時工具.另一種更為穩定的評估方法是計算執行步驟數,這可以有效避免系統因素對結果造成的影響.
 
-本次測試中，我們以 vector 作為測試數據的載體。雖然 vector 在變更長度與空間管理方面提供了便利性，然而其內部實現可能為了優化效能而引入問題。例如，為提升效率，vector 可能會向系統申請超過實際需求的備用空間（預留容量），或是在超出其作用域後暫時不立即釋放未使用的記憶體。這會導致測試中對記憶體使用量的測量產生嚴重誤差，同時，這些操作也可能對計時結果造成潛在的影響。
+本次測試中,我們以 vector 作為測試數據的載體.雖然 vector 在變更長度與空間管理方面提供了便利性,然而其內部實現可能為了優化效能而引入問題.例如,為提升效率,vector 可能會向系統申請超過實際需求的備用空間（預留容量）,或是在超出其作用域後暫時不立即釋放未使用的記憶體.這會導致測試中對記憶體使用量的測量產生嚴重誤差,同時,這些操作也可能對計時結果造成潛在的影響.
