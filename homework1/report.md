@@ -162,6 +162,36 @@ void heapSort(std::vector<T>& arr) {
     }
 }
 ```
+#### Composite Sort
+
+```c++
+template<class T>
+void hybridMergeSortRecursive(std::vector<T>& arr, int left, int right, const int INSERTION_SORT_THRESHOLD) {
+    // 基本情況：如果範圍無效或只有一個元素，則已排序
+    if (left >= right) {
+        return;
+    }
+
+    // 優化：如果子陣列大小小於等於閾值，使用插入排序
+    if (right - left + 1 <= INSERTION_SORT_THRESHOLD) {
+        insertionSort(arr, left, right);
+    } else {
+        // 否則，繼續使用合併排序的分解步驟
+        int mid = left + (right - left) / 2; // 防止溢位
+
+        hybridMergeSortRecursive(arr, left, mid, INSERTION_SORT_THRESHOLD);
+        hybridMergeSortRecursive(arr, mid + 1, right, INSERTION_SORT_THRESHOLD);
+
+        // 優化：如果 arr[mid] <= arr[mid+1]，表示兩個子陣列已經自然有序，無需合併
+        if (arr[mid] <= arr[mid + 1]) {
+           return;
+        }
+
+        // 合併兩個已排序的子陣列
+        merge(arr, left, mid, right);
+    }
+}
+```
 
 ### 產生測試資料
 
@@ -443,6 +473,46 @@ void heapSortTest(uint16_t n, uint16_t repeat)
 }
 ```
 
+#### 混和排序測試單元
+
+```c++
+void compositeSortTest(uint16_t n, uint16_t repeat)
+{
+    if (n == 0)
+    {
+        cout << "Skipping heap sort test for n=0" << endl;
+        return;
+    }
+    cout << format("===========Composite Sort n={:<4d} (worst case) Test========", n) << endl;
+    cout << "before heap sort (worst case) memory info: " << endl;
+    size_t before = showMemUsage();
+    long long longestTime = 0;
+    for (uint16_t i = 0; i < repeat; i++)
+    {
+        std::vector<uint16_t> arr = genRandom(n);
+        if (arr.empty() && n > 0)
+        {
+            cout << "Failed to generate data for heap sort test (n=" << n << ", iter=" << i << ")" << endl;
+            continue;
+        }
+        if (arr.empty())
+            continue;
+
+        auto start = std::chrono::high_resolution_clock::now();
+        compositeSort(arr); 
+        auto end = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+
+        if (duration.count() > longestTime)
+            longestTime = duration.count();
+    }
+    cout << "after heap sort (worst case) memory info: " << endl;
+    size_t after = showMemUsage();
+    cout << "heap sort (longest random case) using: " << longestTime << "ms" << ", memory usage: " << (after > before ? (after - before) / 1024 : 0) << "KB" << endl;
+    cout << "==========================================================" << endl;
+}
+```
+
 #### 記憶體資訊顯示
 
 ```c++
@@ -473,6 +543,8 @@ int main()
         mergeSortTest(n, repeat);
         quickSortTest(n, repeat);
         heapSortTest(n, repeat);
+
+        compositeSortTest(n,repeat);
     }
     showMemUsage();
     return 0;
