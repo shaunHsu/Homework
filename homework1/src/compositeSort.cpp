@@ -1,9 +1,10 @@
 #include <vector>
-#include <algorithm> // std::copy, std::inplace_merge (或者手動實現 merge)
-#include <iostream>   // 用於範例輸出
+#include <algorithm> 
+#include <iostream>   
 #include "sort.h"
 
-void hybridMergeSortRecursive(std::vector<int>& arr, int left, int right, const int INSERTION_SORT_THRESHOLD) {
+template<class T>
+void hybridMergeSortRecursive(std::vector<T>& arr, int left, int right, const int INSERTION_SORT_THRESHOLD) {
     // 基本情況：如果範圍無效或只有一個元素，則已排序
     if (left >= right) {
         return;
@@ -26,17 +27,14 @@ void hybridMergeSortRecursive(std::vector<int>& arr, int left, int right, const 
 
         // 合併兩個已排序的子陣列
         merge(arr, left, mid, right);
-        // 或者使用 C++ 標準庫的 inplace_merge (可能更慢，但不需要額外手動分配空間)
-        // std::inplace_merge(arr.begin() + left, arr.begin() + mid + 1, arr.begin() + right + 1);
     }
 }
 
-// 混合式合併排序的主函式 (使用者呼叫的介面)
-void compositeSort(std::vector<int>& arr) {
+template<class T>
+void compositeSort(std::vector<T>& arr) {
     if (arr.empty()) {
         return;
     }
-    // 設定切換到插入排序的閾值
     const int INSERTION_SORT_THRESHOLD = 32;
     hybridMergeSortRecursive(arr, 0, arr.size() - 1, INSERTION_SORT_THRESHOLD);
 }
