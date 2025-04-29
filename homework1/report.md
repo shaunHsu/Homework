@@ -504,8 +504,8 @@ Heap Sort = O(1) </br>
 使用c++23標準</br>
 
 ```shell
-g++ -std=c++23 main.cpp -o main.exe
-./main.exe > result.txt
+$ g++ -std=c++23 main.cpp -o main.exe
+$ ./main.exe > result.txt
 ```
 
 測試結果請參考result1.txt</br>
