@@ -1,0 +1,12 @@
+BST n=100, BST Height: 99, log2(N): 6.64386, ratio: 14.901, remove time: 0
+BST n=500, BST Height: 498, log2(N): 8.96578, ratio: 55.5445, remove time: 1
+BST n=1000, BST Height: 997, log2(N): 9.96578, ratio: 100.042, remove time: 2
+BST n=2000, BST Height: 1996, log2(N): 10.9658, ratio: 182.021, remove time: 5
+BST n=3000, BST Height: 2995, log2(N): 11.5507, ratio: 259.291, remove time: 10
+BST n=4000, BST Height: 3994, log2(N): 11.9658, ratio: 333.785, remove time: 16
+BST n=5000, BST Height: 4993, log2(N): 12.2877, ratio: 406.341, remove time: 15
+BST n=6000, BST Height: 5992, log2(N): 12.5507, ratio: 477.422, remove time: 19
+BST n=7000, BST Height: 6991, log2(N): 12.7731, ratio: 547.32, remove time: 26
+BST n=8000, BST Height: 7990, log2(N): 12.9658, ratio: 616.237, remove time: 39
+BST n=9000, BST Height: 8989, log2(N): 13.1357, ratio: 684.318, remove time: 30
+BST n=10000, BST Height: 9988, log2(N): 13.2877, ratio: 751.672, remove time: 40

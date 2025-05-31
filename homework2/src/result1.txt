@@ -1,0 +1,1 @@
+BST Height: 30,log(N): 13.2877
