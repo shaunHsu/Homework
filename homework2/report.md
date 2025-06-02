@@ -137,5 +137,3 @@ int calculateHeight(Node<K, V>* node) {
 ### 測試程式輸出說明
 main.cpp 會隨機生成大量節點插入 BST，並測量刪除中間 key 時所花費的時間</br>
 測試結果請參考result1.txt</br>
-
-
