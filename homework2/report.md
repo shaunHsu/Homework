@@ -184,3 +184,7 @@ tinput(k)=2100 * r * ⌈logk(r)⌉ </br>
 ### 是否有 k 讓 t_cpu ≈ t_input(k)？
 有,因為 t_cpu 是常數，但 t_input(k) 隨 k 遞減 </br>
 若 t_cpu = X，則可根據上表找出最接近的 t_input(k)，調整 k 來讓兩者相等 </br>
+## 測試與驗證
+## 效能分析
+## 解題說明
+## 申論及開發報告
