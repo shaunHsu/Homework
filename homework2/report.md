@@ -224,6 +224,9 @@ Binary Search Tree 實測結果  </br>
 | 10000 | 9988   | 13.29   | 751.67         | 40               |
 可見 BST 若未平衡，效能劣化極快，刪除耗時明顯增加  </br>
 
+![螢幕擷取畫面 2025-06-08 205149](https://github.com/user-attachments/assets/053545b6-b222-42c5-809a-9fdb7ca29c2a)
+![螢幕擷取畫面 2025-06-08 205128](https://github.com/user-attachments/assets/b7899481-9224-4486-ba3d-84118491072e)
+
 ### (三) K 路合併模擬分析
 使用不同 k 值模擬估算輸入時間  </br>
 理論推導結合 I/O 成本與 CPU 成本分析  </br>
