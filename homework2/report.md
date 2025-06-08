@@ -142,12 +142,12 @@ int calculateHeight(Node<K, V>* node) {
 
 ### 測試程式輸出說明
 main.cpp 會隨機生成大量節點插入 BST，並測量刪除中間 key 時所花費的時間</br>
-測試結果請參考result1.txt</br>
+測試結果請參考result2.txt</br>
 
 ## 效能分析
 ### Binary Search Tree 效能分析
 BST 在隨機資料下的理想高度應為 $\log_2(N)$，但若插入順序接近排序，會導致高度趨近 n，造成效能劣化。</br>
-根據 result1.txt 測試結果：</br>
+根據 result2.txt 測試結果：</br>
 BST Height: 30, log(N): 13.2877</br>
 推估此情況下 N 約為 2^(13.2877)≈10000，但高度卻高達 30，說明此 BST 並未平衡，搜尋與刪除的效率趨近 O(n)。</br>
 
@@ -205,7 +205,7 @@ tinput(k)=2100 * r * ⌈logk(r)⌉ </br>
 ### (二) Binary Search Tree 測試
 main.cpp 中隨機插入大量節點  </br>
 特別針對中間 key 的刪除進行時間測試  </br>
-測試輸出記錄於 result1.txt  </br>
+測試輸出記錄於 result2.txt  </br>
 Binary Search Tree 實測結果  </br>
 使用不同的 n 值插入遞增 key，觀察 BST 樹高與刪除時間如下表：  </br>
 | n     | Height | log₂(n) | Height/log₂(n) | Remove Time (ms) |
@@ -253,4 +253,4 @@ Max Heap / Min Heap 與 Binary Search Tree 均採物件導向方式設計，方�
 ### 測試策略
 測試採隨機與關鍵案例並重</br>
 報告與輸出結果具備可重現性與說服力</br>
-資料詳細記錄於 result1.txt 與 result2.txt，方便比對與分析
+資料詳細記錄於 result2.txt，方便比對與分析

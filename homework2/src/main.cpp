@@ -13,14 +13,15 @@ void BSTTest() {
                      5000, 6000, 7000, 8000, 9000, 10000};
     BST<uint16_t, uint16_t> BST;
     mt19937 mt(chrono::high_resolution_clock::now().time_since_epoch().count());
+    uint32_t num=0;
     for (uint16_t n : nn) {
         for (size_t i = 0; i < n; i++) {
-            uint32_t num = mt() % UINT32_MAX;
-            BST.insert(i, num);
+            num = mt() % UINT32_MAX;
+            BST.insert(num,i);
         }
         uint16_t BSTHeight = BST.height();
         auto start = chrono::high_resolution_clock::now();
-        BST.remove(n / 2);
+        BST.removeTest();
         auto end = chrono::high_resolution_clock::now();
         auto duration =
             chrono::duration_cast<chrono::microseconds>(end - start);

@@ -1,6 +1,6 @@
+#include <algorithm>  // For std::max
+#include <cstdint>    // For uint16_t if needed, though height will use int
 #include <iostream>
-#include <algorithm> // For std::max
-#include <cstdint>   // For uint16_t if needed, though height will use int
 
 // Node structure for key-value pairs
 template <typename K, typename V>
@@ -21,9 +21,7 @@ class BST {
     BST() : root(nullptr) {}
 
     // Insert a key-value pair
-    void insert(K key, V value) {
-        root = insertRecursive(root, key, value);
-    }
+    void insert(K key, V value) { root = insertRecursive(root, key, value); }
 
     // Search for a key and return a pointer to its value
     // Returns nullptr if key is not found
@@ -37,20 +35,54 @@ class BST {
 
     // Calculate the height of the tree
     // Height of an empty tree is -1, height of a tree with one node is 0
-    int height() { // Changed to int
+    int height() {  // Changed to int
         return calculateHeight(root);
     }
 
     // Remove a node with the given key
-    void remove(K key) {
-        root = removeRecursive(root, key);
+    void remove(K key) { root = removeRecursive(root, key); }
+    void removeTest() {
+        if (root == nullptr) {
+            std::cout << "Tree is empty. Nothing to remove." << std::endl;
+            return;
+        }
+
+        int maxDepth = -1;
+        Node<K, V>* deepestNode = nullptr;
+
+        // 從根節點開始，初始深度為 0，尋找最深的節點
+        findDeepestNodeRecursive(root, 0, maxDepth, deepestNode);
+
+        if (deepestNode != nullptr) {
+            K keyToDelete = deepestNode->key;
+            remove(keyToDelete);
+        } else {
+            // 這個情況在樹不為空時不應該發生
+            std::cout << "Could not find a deepest node." << std::endl;
+        }
     }
 
-    ~BST() {
-        destroyRecursive(root);
-    }
+    ~BST() { destroyRecursive(root); }
 
    private:
+    void findDeepestNodeRecursive(Node<K, V>* current, int currentDepth,
+                                  int& maxDepth, Node<K, V>*& deepestNode) {
+        if (current == nullptr) {
+            return;
+        }
+
+        // 如果當前節點的深度大於已知的最大深度，就更新紀錄
+        if (currentDepth > maxDepth) {
+            maxDepth = currentDepth;
+            deepestNode = current;
+        }
+
+        // 繼續往左右子樹尋找
+        findDeepestNodeRecursive(current->left, currentDepth + 1, maxDepth,
+                                 deepestNode);
+        findDeepestNodeRecursive(current->right, currentDepth + 1, maxDepth,
+                                 deepestNode);
+    }
     Node<K, V>* insertRecursive(Node<K, V>* current, K key, V value) {
         if (current == nullptr) {
             return new Node<K, V>(key, value);
@@ -95,12 +127,12 @@ class BST {
         }
     }
 
-    int calculateHeight(Node<K, V>* node) { // Changed to int
+    int calculateHeight(Node<K, V>* node) {  // Changed to int
         if (node == nullptr) {
-            return -1; 
+            return -1;
         }
         // leftHeight and rightHeight should also ideally be int
-        int leftHeight = calculateHeight(node->left); 
+        int leftHeight = calculateHeight(node->left);
         int rightHeight = calculateHeight(node->right);
         return std::max(leftHeight, rightHeight) + 1;
     }
@@ -114,7 +146,7 @@ class BST {
 
     Node<K, V>* removeRecursive(Node<K, V>* current, K key) {
         if (current == nullptr) {
-            return nullptr; // Key not found
+            return nullptr;  // Key not found
         }
 
         // Navigate to the node to be deleted
@@ -142,10 +174,12 @@ class BST {
             }
             // Case 3: Node has two children
             else {
-                Node<K, V>* temp = findMin(current->right); // Find inorder successor
+                Node<K, V>* temp =
+                    findMin(current->right);  // Find inorder successor
                 current->key = temp->key;
                 current->value = temp->value;
-                current->right = removeRecursive(current->right, temp->key); // Delete the inorder successor
+                current->right = removeRecursive(
+                    current->right, temp->key);  // Delete the inorder successor
             }
         }
         return current;
